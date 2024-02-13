@@ -934,18 +934,23 @@
 // const ans = myFunc();
 // ans();    // since myFunc is returning a function and is stored in ans. So ans also becomes a function for obvious reasons
 
-// Important array methods
+/********************************************************************* */
 
-// const numbers = [3,4,6,5,2];
+// Important array methods  forEach, map, filter, reduce
 
-// function multiplyBy2(number, index){
-//         console.log("index is ", index );
-//         console.log(`${number}*2 = ${number*2}`);
+const numbers = [3, 4, 6, 5, 2];
+function multiplyBy2(number, index) {
+  console.log("index is ", index);
+  console.log(`${number}*2 = ${number * 2}`);
+}
+// multiplyBy2(numbers[0], 0); //index is 0, 3*2 = 6
+// but if we want to do it for all the index, we gonna use for loop
+
+// for (let i = 0; i < numbers.length; i++) {
+//   multiplyBy2(numbers[i], i);
 // }
 
-// for(let i=0; i<numbers.length; i++){
-//         multiplyBy2(numbers[i],i);
-// }
+numbers.forEach(multiplyBy2);
 
 // let i = 0, j = 1;
 // function fibbo(i,j){

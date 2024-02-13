@@ -956,10 +956,32 @@
 
 // The whole codes can be also written as
 
-const numbers = [3, 4, 6, 5, 2];
-numbers.forEach(function (number, index) {
-  console.log(`number : ${number} and index: ${index}`);
-});
+// const numbers = [3, 4, 6, 5, 2];
+// numbers.forEach(function (number, index) {
+//   console.log(`number : ${number} and index: ${index}`);
+// });
+
+// Now if we have to multiply each number with 2 and print
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+// numbers.forEach(function (number) {
+//   console.log(`${number} * 2 = ${number * 2}`);
+// });
+
+// forEach for objects
+// const users = [
+//   { firstName: "Pinju", age: 25, gender: "male" },
+//   { firstName: "Ananya", age: 23, gender: "female" },
+//   { firstName: "Rid", age: 26, gender: "male" },
+// ];
+
+// // users.forEach(function (user) {
+// //   console.log(user.firstName);
+// // });
+// // same thing can be done using for of loop. forEach is older than for of. Thats the reason why we see more of forEach than for of
+
+// for (user of users) {
+//   console.log(user.firstName);
+// }
 
 /********************************************************************* */
 // Important  PARAMETER VS ARGUMENT
@@ -967,8 +989,70 @@ numbers.forEach(function (number, index) {
 // While calling the function, the elements inside the parameter are called arguments.
 /********************************************************************* */
 
-// let i = 0, j = 1;
-// function fibbo(i,j){
-//         return i + j;
-// }
-// console.log('fibbo')
+// // Map method  : similar to forEach. As forEach was taking callback function as a parameter. This map method will also take callback as parameter
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+// // map function always make new array
+
+// const square = (number) => {
+//   return number * number;
+// };
+
+// const squareArray = numbers.map(square);
+// console.log(squareArray); // {1,4,9,16 ...} Map made new array of squares
+
+// same thing
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+// const squareArray = numbers.map((number) => {
+//   return number + 2;
+// });
+// console.log(squareArray);
+
+// we can also pass index as parameter.
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+// const squareArray = numbers.map((number, index) => {
+//   return `index: ${index}, number: ${number}`;
+// });
+// console.log(squareArray);
+
+// // Real Example
+// const users = [
+//   { firstName: "Pinju", age: 25, gender: "male" },
+//   { firstName: "Ananya", age: 23, gender: "female" },
+//   { firstName: "Rid", age: 26, gender: "male" },
+// ];
+
+// const userNames = users.map((user) => {
+//   return user.firstName;
+// });
+// console.log(userNames); // ['Pin','ana','rid']
+
+/****************************************************************** */
+
+// // Filter Method  The callback that filter accepts has to be of boolean value. that is true or false.
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// const isEven = (number) => {
+//   return number % 2 == 0;
+// };
+
+// const evenNumbers = numbers.filter(isEven);
+// console.log(evenNumbers);
+
+// const isOdd = (number) => {
+//   return number % 2 !== 0;
+// };
+// const oddNumbers = numbers.filter(isOdd);
+// console.log(oddNumbers);
+
+// or
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+// const evenNumbers = numbers.filter((number) => {
+//   return number % 2 == 0;
+// });
+// console.log(evenNumbers);
+
+/******************************************************************** */

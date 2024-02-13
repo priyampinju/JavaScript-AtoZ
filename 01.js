@@ -1,48 +1,53 @@
 // "use strict";
 
-        // console.log("Hello World");
-        // // alert("Hi");
-        // // document.write("Hi bro");
-        // // console.warn("this is warning");
-        // // console.error("this is an error hehe")
-        // // console.clear()
-        // var num1=20;
-        // var num3=10;
-        // // console.log(num1+num3);
-        // var arr=[1,2,3,"Pinju",5];
+// console.log("Hello World");
+// // alert("Hi");
+// // document.write("Hi bro");
+// // console.warn("this is warning");
+// console.error("this is an error hehe")
+// // console.clear()
+// var num1=20;
+// var num3=10;
+// console.log(num1+num3);
+// console.log('num1 is '+ num1)
 
-        // function avg(a, b){
-        //     c = (a + b)/2;
-        //     return c;
-        // }
+// var arr=[1,2,3,"Pinju",5];
+// console.log(typeof(arr[3]))
 
-        // c = avg(4,5);
-        // c1 = avg(4,6)
-        // c2 = avg(14,16);
-        // console.log(c1, c2);
+// function avg(a, b){
+//     c = (a + b)/2;
+//     return c;
+// }
 
-        // var age = 22;
-        // if(age<=8){
-        //     console.log("You're a kid");
-        // }
-        // else if(age>=8 && age<=18){
-        //     console.log("You're a to be kid");
-        // }
-        // else{
-        //     console.log("hehe");
-        // }
+// let ab = avg(12,16);
+// console.log(ab)
 
+// c = avg(4,5);
+// c1 = avg(4,6)
+// c2 = avg(14,16);
+// console.log(c1, c2);
 
-        // var myName = "Pinju";    
-        // console.log(myName);
-        // myName = "Priyam"                
-        // console.log(myName);
-        // var aa = 2;
-        // console.log(aa ** 3);
-        
+// var age = 22;
+// if(age<=8){
+//     console.log("You're a kid");
+// }
+// else if(age>=8 && age<=18){
+//     console.log("You're a to be kid");
+// }
+// else{
+//     console.log("hehe");
+// }
+
+// var myName = "Pinju";
+// console.log(myName);
+// myName = "Priyam"
+// console.log(myName);
+// var aa = 2;
+// console.log(aa ** 3);
+
 // //let keyword
 // let firstName = "Pinju";
-// // firstName = "Priyam";
+// firstName = "Priyam";
 // console.log(firstName);
 
 // //declare constants
@@ -50,10 +55,9 @@
 // console.log(pi);
 
 // //string indexing
-// console.log(firstName[1]); 
+// console.log(firstName[1]);
 // console.log(firstName.length);
 // console.log(firstName[firstName.length-2]);
-
 
 // //trim()
 // let firstName = "       Pinju        ";
@@ -62,10 +66,8 @@
 // firstName = firstName.trim();
 // console.log(firstName.length);
 
-
 // let namrata = "Kavya";
 // console.log(namrata);
-
 
 // let firstName = "       Namrata        ";
 // secondName = "Kavya";
@@ -77,16 +79,15 @@
 // console.log(firstName);
 // console.log(secondName);
 
-
 // console.clear();
 
-
-//slice function
+// //slice function
 // let newString = "abcdefghijkl";
+// console.log(newString)
 // newString = newString.slice(0,7);  //start index, end index
 // console.log(newString);
 
-// //data types
+//data types
 // let age = 30;
 // firstName = "dnsofdson";
 // age = age + "";   //trick to change int to string int + blank space
@@ -108,19 +109,17 @@
 // str = Number(str);
 // console.log(typeof str);
 
-
-// //String Concatenation
-// // string1 = "Bro"
-// // string2 = "Pro"
-// // fullName = string1 +" "+ string2;
-// // console.log(fullName);
+// // String Concatenation
+// string1 = "Bro"
+// string2 = "Pro"
+// fullName = string1 +" "+ string2;
+// console.log(fullName);
 
 // //trying to add two numbers
 // string1 = "10"
 // string2 = "15"
 // fullName = +string1 + +string2; //using plus before string to change it to number
 // console.log(fullName);
-
 
 // //template string
 // myAge = 23;
@@ -131,15 +130,12 @@
 
 // console.log(aboutMe);
 
-
-
 // //undefined
 // let fName1;
 // console.log(fName1); //when we dont assign any value it becomes unddefined
 // console.log(typeof fName1);
 
 // console.log(typeof null); //it'll show object
-
 
 // //BigInt
 // let myNumber = 12324;
@@ -150,21 +146,18 @@
 // console.log(myNumber2);
 // console.log(myNumber2 + sameMyNumber2); //we cant mix bigint with other data types
 
-
 //Comparison Operator
 // let num1 = 7;
 // let num2 = 7;
 // console.log(num1<=num2); //<, >, <=, >= we can use them
 
-
 //== vs ===
 // let num1 = 7;
-// let num2 = 7;
+// let num2 = '7';
 // console.log(num1 == num2) //it will check only value not data types
 // console.log(num1 === num2); //it'll check data types too
 
 // console.log(num1 != num2); //it checks not equal to
-
 
 // //if else
 // let age = 18;
@@ -179,7 +172,7 @@
 // }
 
 // // falsy value
-// let firstName = "";  //it'll give a false value  null,false will give falsy value
+// let firstName = "6";  //it'll give a false value  null,false will give falsy value
 
 // if(firstName){
 //         console.log(firstName);
@@ -187,7 +180,6 @@
 // else{
 //         console.log("first name is empty");
 // }
-
 
 //ternary operators
 //problem: we have to store milk for age lower than 5, else coff
@@ -208,7 +200,6 @@
 // let drink = age >= 5 ? "coffee" : "milk"; //it'll check whether it satisfies first condition or not
 // console.log(drink);
 
-
 // // //and operator
 // let firstName = "Katrina";
 // let age = 2;
@@ -217,7 +208,6 @@
 // //         console.log("Your name starts with K and you are above 18");
 // // }
 
-
 // //or operator
 // if(firstName[0] === "K" || age > 18){
 //         console.log("inside if"); // runs even when one condition is true
@@ -225,8 +215,6 @@
 // else{
 //         console.log("inside out"); // will give this output just when both conditions are false
 // }
-
-
 
 // //nested if else
 // // Problem: Guess the number
@@ -237,7 +225,7 @@
 // if(userGuess === winningNumber){
 //         console.log("Bingo! You guessed it right.");
 // }
-// else if(userGuess >= 30){ 
+// else if(userGuess >= 30){
 //         console.log("Your guess is too high.");
 // }
 // else if(userGuess <=12){
@@ -246,7 +234,6 @@
 // else {
 //         console.log("Your guess is wrong");
 // }
-
 
 // //switch statement
 // //problem: We have to print the name of the day
@@ -280,9 +267,6 @@
 //                 break;
 // }
 
-
-
-
 // //While loop
 
 // let i = 0;
@@ -296,11 +280,6 @@
 // }
 // console.log(`The current i is ${i}.`);
 
-
-
-
-
-
 // //While loop example
 // //problem: sum of n natural numbers
 // let i=1; n=3; sum=0;
@@ -311,18 +290,12 @@
 // }
 // console.log(sum);
 
-
-
-
-
 // //for loop
 // //print 0 to 9
 
 // for(i=0; i<=9; i++){
 //         console.log(i);
 // }
-
-
 
 // //example:
 // //add first n natural number
@@ -331,10 +304,6 @@
 //         sum = sum + i;
 // }
 // console.log(sum);
-
-
-
-
 
 //break keyword and continue keyword
 // for(i=0;i<=10; i++){
@@ -353,10 +322,6 @@
 
 // }
 
-
-
-
-
 // //do while loop
 // let i = 0
 // do{
@@ -365,8 +330,7 @@
 // }
 // while(i<=10);
 
-
-
+/* ===========================================================*/
 
 //array
 // let fruits = ["apple", "mango", "banana"];
@@ -374,7 +338,7 @@
 // fruits.push("babababa");
 // console.log(fruits);
 // fruits.pop("jsdbjsbdfjsbf");
-// // console.log(fruits);
+// console.log(fruits);
 // let popedFruit = fruits.pop();
 // console.log(fruits);
 // fruits = ["bananananana", ...fruits, "appppppp"];
@@ -389,12 +353,9 @@
 // fruits.shift();
 // console.log(fruits); //shift removes items from the start
 
-//push and pop are fast then shift or unshift
+//push and pop are faster then shift or unshift
 
-
-
-
-
+/* ===========================================================*/
 
 // //primitive vs reference type
 // //primitive
@@ -419,12 +380,27 @@
 // console.log(array2); //item1, item2, item3
 // console.log(array1 === array2);
 
+// Primitive type variables are stored in stack, and every variable is assigned different stack memory
+// Reference type variables are stored in heap memory and their address is stored in stack. So for array1, one memory is assigned in stack that will store the heap address of array1. So when we write array1 = array2, another stack memory is assigned to array2 but it will store the same address of the array1. So for array2, different stack memory is assigned but not different heap memory. So when we change the array1, and then console log array2, stack memory will refer the heap address of array1. So array 2 will also be changed unlike the primitive variable
 
+/*=======================================================*/
 
 // //ways to clone an array
+
+// let array1 = ['aaa', 'bbb', 'ccc']
+// let array2 = array1
+// console.log(array1, array2)
+// console.log(array1 === array2) // it will show true
+// let array3 = ['aaa', 'bbb', 'ccc']
+// console.log(array3)
+// console.log(array1 === array3) // it shows false
+
 // let array1 = ["a", "b"];
-// // let array2 = array1.slice(0); //method for cloning an array
-// // let array2 = [].concat(array1); //method two for cloning an array
+// let array2 = array1.slice(0); //method for cloning an array
+// console.log(array2)
+// let array2 = [].concat(array1); //method two for cloning an array
+// console.log(array1)
+// console.log(array2)
 
 // //new way (SPREAD OPERATOR)
 // let array2 = [...array1];
@@ -432,8 +408,9 @@
 // array1.push("c");
 // console.log(array1, array2);
 
+// So we can use all these 3 methods to clone an array
 
-
+/* ===================================================================*/
 
 // //For loop in array
 // let fruits = ["apple", "mango", "banana", "grapes"];
@@ -442,17 +419,29 @@
 //         fruits2.push(fruits[i].toUpperCase());
 // }
 // console.log(fruits2);
-
-
-
+// console.log(fruits)
+// console.log(fruits.length)
+// console.log(fruits.length-1)
+// console.log(fruits[1])
+// for (i=0; i<fruits.length; i++){
+//         fruits2.push(fruits[i].toUpperCase());
+// }
+// console.log(fruits)
+// console.log(fruits2)
 
 // //const for arrays
 // const fruits = ["apple", "mango", "grapes", "banana"];
-// fruits.push("banana");
-// console.log(fruits);
+// console.log(fruits)
+// fruits.push("banana1");
+// console.log(fruits); // the banana1 will be pushed even after being a const
+// // As we have learned, arrays are stored in the heap memory and the adress of it is stored in the stack memory. So when we are pushing or popping we are playing with the heap memory and not with the stack memory. So we can do it. But we cant initiate a new array with the same name, since that will change the stack memory.
+// fruits = ['sdhf', 'dfbdgf'] // This will give us error since we are making a new array. So if we have to change the items in the array, we do it with all the array methods such as push, pop, slice etc.
 
+// Now the question is whether we should use let or const for assigning an array. Let's take an example. We have assigned an array using let fruits=..., then unknowing we again assigned another array with the same name. Now what will happen is the old array's items will be deleted and the new array will be functional. This might cause very heavy consequences. So its better for us to use const for arrays. As we can do every operation with it.
 
+// We should use const for all the reference type variables
 
+/*==================================================================*/
 
 // //while loop in array
 // const fruits = ["apple", "banana", "Kela"];
@@ -464,9 +453,6 @@
 // }
 // console.log(fruits2);
 
-
-
-
 // //For of loop
 // const fruits = ["apple", "Mango","bananannanananan"];
 // const fruits2 = [];
@@ -474,34 +460,48 @@
 //         fruits2.push(fruit);
 // }
 // console.log(fruits2);
-
-
+// console.log(fruits)
+// for(fruit of fruits){
+//         console.log(fruit)
+// }
 
 // //For in loop
 // const fruits = ["apple", "Mango","bananannanananan"];
 // for(let index in fruits){
 //         console.log(fruits[index]);
 // }
+// for (index in fruits) {
+//         console.log(index)
+// }
 
+// For of loops returns the items in the array but For in loop returns the index of the item
+// For of loop is the mostly used loop with arrays
 
+/* ================================================================= */
 
 // // //Array Destructuring
-// const fruits = ["apple", "Mango","bananannanananan"];
-// // let myFruit = fruits[0];
-// // let myFruit2 = fruits[1];
-// // console.log(myFruit, myFruit2) //op. apple mango
+// const fruits = ["apple", "Mango","bananannanananan", "coconut"];
+// let myFruit = fruits[0];
+// let myFruit2 = fruits[1];
+// console.log(myFruit, myFruit2) //op. apple mango
 
+// let [myVar1, myVar2] = fruits // this is another way of assigning variables
+// console.log(myVar1, myVar2)
+
+// let [myVar1, myVar2, ...myNewArray] = fruits
+// console.log(myNewArray) // This will return all the remaining items in the array fruits
 
 // //shortcut
 // let [myFruit, myFruit2] = fruits;
 // console.log(myFruit, myFruit2); //same op
 
-
+/*================================================================== */
 
 //Objects
 //arrays are good but not sufficient for real world data
 //objects store key value pairs
 //objects dont have index
+// objects are reference type variable
 
 // // const person = {name:"Pinju", age:23};
 // const person = {
@@ -510,14 +510,26 @@
 //         gf:"Rita",
 //         hobbies: ["shdbs", "sdihbksf", "shdbsbf"]
 // }
-// console.log(person); 
-// // console.log(person.gf);
-// person["person"] = "male";
 // console.log(person);
-// console.log(person.hobbies);
-// console.log(person["name"]);
+// // console.log(person.gf);
 
+// // to add another key value pair in the object,
+// person.gender = 'male'
+// console.log(person);
 
+// // there is a difference between dot and bracket notation person.name vs person['name']
+// console.log(person.name)    // pinju
+// console.log(person['name']); // pinju
+// They return the same output
+
+// person["gender"] = "male";
+// console.log(person)
+// So that just means that doesnot matter whether we use person.gender = 'male' or person['gender'] = 'male' They return the same
+
+// The Diiference
+// Lets take that the object has a key named 'my hobbies', so here if we want to access it using dot notation person.my hobbies -> here there is a space between the words. So here we cant use the dot notation. Here comes the usage of bracket notation. We can use person['my hobbies']
+
+// also for us to have a key with two words, we cant just initiate it with my hobbies : ['sdsfd','dfgdg']. For that also we have to initialize it with 'my hobbies' : ['sdfsdf','sdfsf']
 
 // //difference between dot and bracket notation
 // const key = "email";
@@ -525,42 +537,59 @@
 
 // // console.log(person["hobbies"]);
 // person[key] = "pinnu@gmail.com";
-// console.log(person);
+// console.log(person); // here the output will show email:'sdfsff'
 
+// but
+
+// person['key'] = 'sdfonsf@sdjfns'
+// console.log(person); // This will return key: 'sdfsf@sdsf'
+
+//So if we want another variable to be the key, we cant use string
+
+/* ==================================================================== */
 
 // //Object Iteration
 // const person = {name:"Pinju", age:23, hobbies:["guitar", "Bgmi", "sodosjf"]};
 
 // //for in loop
 // for(let key in person){
-//         //console.log(person[key]);
+// console.log(key);
+// console.log(person[key]);
 //         console.log(`${key} : ${person[key]}`);
 // }
-// // console.log(typeof person)
-// // console.log(Object.keys(person));
+// console.log(typeof person)
+// console.log(Object.keys(person));
 // const val = Array.isArray(Object.keys(person));
 // console.log(val);
 
-
-
 // //Computed properties
-// const key1 = "objkey1";
-// const key2 = "objkey2";
+// For example we have
+// const key1 = 'name';
+// const key2 = 'age';
+// const value1 = 'pinju';
+// const value2 = '25'
+// // now how can we put it in an object
+// const obj = {
+//         key1 : value1,
+//         key2 : value2,
+// }
+// console.log(obj)   // {key1: 'pinju', key2: '25'}
+// // but we want name : pinju, age: 25
 
-// const value1 = "myvalue1";
-// const value2 = "myvalue2";
+// const obj1 = {
+//         [key1] : value1,
+//         [key2] : value2,
+// }
+// console.log(obj1) // {name: 'pinju', age: '25'}
 
-// // const obj = {
-// //         [key1] : value1,
-// // }
-// // console.log(obj)
+// OR
 
-// //or
 // const obj = {};
 // obj[key1] = value1;
 // obj[key2] = value2;
 // console.log(obj);
 
+/*============================================================*/
 
 //spread operator
 // const array = [..."abcd"];
@@ -579,7 +608,6 @@
 // const newObject = { ...["item1", "item2"]};
 // console.log(newObject);
 
-
 // //Destucturing for object
 // const band = {
 //         bandName: "One Direction",
@@ -587,9 +615,8 @@
 //         year: 2010
 // };
 // // console.log(band.bandName, band.famousSong)
-// let {bandName, famousSong, year} = band;
+// let {bandName, famousSong, year} = band; // now these variables will work as normally assigned variables. This is called destructuring
 // console.log(year)
-
 
 // //objects inside array //very useful
 // const users = [
@@ -597,11 +624,10 @@
 //         {userId: 2, firstName: "Rohan", gender: "male"},
 //         {userId: 3, firstName: "Kutta", gender: "female"},
 // ]
-// // console.log(users);
+// console.log(users);
 // for(let user of users){
 //         console.log(user.firstName);
 // }
-
 
 // //nested destructuring
 // const users = [
@@ -614,19 +640,17 @@
 // console.log(firstName);
 // console.log(gender);
 
-
-
-
+/*========================================================================*/
 
 // //Functions
-// function singHappyBirthday(){
-//         console.log("Happy Birthay to you");
+// function singHappyBirthday() {
+//   console.log("Happy Birthay to you");
 // }
-// function twoPlusFour(a,b){
-//         return a+b;
+// function twoPlusFour(a, b) {
+//   return a + b;
 // }
 // // console.log(twoPlusFour());
-// const returnedValue = twoPlusFour(7,4);
+// const returnedValue = twoPlusFour(7, 4);
 // console.log(returnedValue);
 
 // function sumThreeNumber(a,b,c){
@@ -634,7 +658,6 @@
 // }
 // const sum = sumThreeNumber(2,7,20);
 // console.log(sum)
-
 
 // //odd or even
 // function isEven(a){
@@ -647,7 +670,6 @@
 // }
 // console.log(isEven(7))
 
-
 // //problem:  input: string, output: firstCharacter
 // function firstCharacter(string){
 //         return string[0];
@@ -655,6 +677,7 @@
 // console.log(firstCharacter("Pinju"));
 
 // //problem: input: array, target(number), if found output: index of target
+
 // function nav(array, target){
 //         for(i = 0;i<array.length;i++){
 //                 if(array[i] === target){
@@ -667,9 +690,7 @@
 // const ans = nav(myArray,9);
 // console.log(ans);
 
-
-
-//function expression
+// //function expression
 // function singHappyBirthday(){
 //         console.log("Happy Birthay to you");
 // }
@@ -679,9 +700,8 @@
 // }
 // singHappyBirthday();
 
+// //arrow functions
 
-
-//arrow functions
 // const singHappyBirthday = function(){
 //         console.log("Happy Birthay to you");
 // }
@@ -690,7 +710,6 @@
 //         console.log("Happy Birthay to you");
 // }
 // singHappyBirthday();
-
 
 // const isEven = (a) => {
 //         return a % 2 === 0;
@@ -702,36 +721,53 @@
 // }
 // console.log(isEven(3));
 
-// const isEven = a => a % 2 === 0;  //we can remove return
+// const isEven = (a) => a % 2 === 0; //we can remove return
 // console.log(isEven(3));
+// console.log(isEven(8));
 
+// const isEven = (a) => {
+//   if (a % 2 == 0) {
+//     return true;
+//   }
+//   return false;
+// };
+// console.log(isEven(8));
 
+/************************************************************************ */
 
-//Hoisting
+// Hoisting
+
 // hello();
-
 // function hello(){
 //         console.log("HEllo")
 // }  //output: HEllo
 
-// const hello = function(){
+// hello()
+// const hello = () => {
 //         console.log("Hello")
 // }  //output: Error    Function expression is not allowwed for function calling before funciton declaration
 
+// When we declare a function using function declaration, but it will not work with fuunctiion exxpression and arrow function
 
-// //console.log(hello);
+// likewise
+
+// //console.log(hello);   // uncaught reference error. But if we declare the same variable using var it will be printed. So, when we daclare a variable using var we can access it even before declaring.
 // const hello = "hello World";
 // console.log(hello);
 
+/************************************************************************* */
 
 // //Function inside functions
+
 // const app = () =>{
 //         const myFunc = () =>{
 //                 console.log("Hello from myFunc");
 //         }
+
 //         const addFunc = (num1, num2) =>{
 //                 return num1 + num2;
 //         }
+
 //         const mul = (num1, num2) =>num1 * num2;
 //         console.log("inside app");
 
@@ -742,57 +778,62 @@
 // app();
 // // we can make multiple functions inside a single function
 
-
+/************************************************************************** */
 
 // //Lexical scope
-// function myApp(){
-//         const myVar = "value1";
-//         function myFunc(){
-//                 // const myVar = "Value5" 
-//                 //when commented out, it'll check for other myVar variables inside its lexical environment
-//                 console.log("inside myFunc", myVar);
-//         }
-//         const myFunc2 = function(){}
-//         const myFunc3 = () => {}
-//         console.log(myVar);
-//         myFunc();
+// function myApp() {
+//   const myVar = "value1";
+//   function myFunc() {
+//     const myVar = "Value5";
+//     //                 //when commented out, it'll check for other myVar variables inside its lexical environment (outside of the function. Here, outside of myFunc() that is in myApp)
+//     console.log("inside myFunc", myVar);
+//   }
+//   const myFunc2 = function () {};
+//   const myFunc3 = () => {};
+//   console.log(myVar);
+//   myFunc();
 // }
 // myApp();
 
-
+/*************************************************************************** */
 
 // // Block scope vs function scope
 // {
-//         let firstName = "Ritamoni";
-//         console.log(firstName)
-
+//   let firstName = "Ritamoni";
+//   console.log(firstName);
 // }
+
+// console.log(firstName); // error
+
+// {    } This is a block in js. If we declare a variable inside the block using let and const we cant access it outside the block.
 
 // // we can't access varibles outside a block.
 // // Let and const are block scope
 // // Var is function scope
 
-// { 
-//         var firstName = "Poijusd"
-
+// {
+//   var firstName = "Poijusd";
 // }
-// console.log(firstName)
- 
+// console.log(firstName); // poiijussnd
 
-// function myApp(){
-//         if(true){
-//         var firstName = "Priyam";
-//                 console.log(firstName);
-//         }
-//         console.log(firstName);
+// But when we declare variable with var, we can access it outside its block
+
+// function myApp() {
+//   if (true) {
+//     var firstName = "Priyam";
+//     console.log(firstName);
+//   }
+//   console.log(firstName); // print
 // }
-// myApp()
-// //  var can be used anywhere in the function
+// console.log(firstName); // error
+// myApp();
+// //  var can be used anywhere in the function but not outside the function
 
-
+/*************************************************************************** */
 
 // // default parameters
 // //problem: how to make any variable a default
+// lets take an example so we define a function add(a,b) {...} but if the user provided only one number. In that scene, the output will be NaN. So to avoid that, we can say if user doesnt provide two numbers take the second number to be default as 0. thats written as add(a,b=0) or we can use if(typeof b === 'undefined' { b = 0})
 
 // function addTwoNum(a,b=0){
 //         // if(typeof b === "undefined"){
@@ -805,28 +846,30 @@
 // const ans = addTwoNum(4);
 // console.log(ans);
 
+/********************************************************************* */
 
-// Rest Parameter
-// function myFunc(a,b,...c){
-//         console.log(`a is ${a}`);
-//         console.log(`b is ${b}`);
-//         console.log(`c is ${c}`);
+// // Rest Parameter
+// Lets say we have a func with 3 parameters. But the user gives 7 parameters. So now if we want to put the rest of the parameters in the third argument, we can use rest parameter. (...c).
+
+// function myFunc(a, b, ...c) {
+//   console.log(`a is ${a}`);
+//   console.log(`b is ${b}`);
+//   console.log(`c is ${c}`);
 // }
-// myFunc(2,3,4,6,5)
+// myFunc(2, 3, 4, 6, 5, 8);
 
+// // function to add all the numbers given by user
+// const addAll = (...numbers) => {
+//   total = 0;
+//   for (let number of numbers) {
+//     total = total + number;
+//   }
+//   return total;
+// };
+// let rita = addAll(5, 8, 9, 2, 3, 1);
+// console.log(rita);  //28
 
-
-// function addAll(...numbers){
-//         total = 0;
-//         for(let number of numbers){
-//                 total = total + number;
-//         }
-//         return  total;
-// }
-// let rita = addAll(5,8,9,2,3,1); 
-// console.log(rita)
-
-
+/********************************************************************** */
 
 // // Parameter destructuring
 
@@ -851,25 +894,36 @@
 
 // getDetails(person)
 
-
+/******************************************************************** */
 
 // // Callback functions
-// function myfunc(callback){
-//         console.log("asbdfb");
-//         callback();
+// function myfunc(callback) {
+//   console.log("asbdfb");
+//   callback("pin");
 // }
 
-// function myfunc2(name){
-//         console.log("inside my func 2");
-//         console.log(`your name is ${name}`);
+// function myfunc2(name) {
+//   console.log("inside my func 2");
+//   console.log(`your name is ${name}`);
 // }
 
-// myfunc(myfunc2)
+// myfunc(myfunc2);
 // // we call another function inside this function
 
+// const myfunc = () => console.log("myfunc");
 
+// const myfunc2 = (callback) => {
+//   console.log("myfunc2");
+//   callback();
+// };
+
+// myfunc2(myfunc);
+
+/********************************************************************** */
 
 // // Function returning a function
+// // We have seen functions returning value or printing something. But can a function return a function? Yes it can
+
 // function myFunc(){
 //         function hello(){
 //                 console.log("HEll0 World");
@@ -878,9 +932,7 @@
 // }
 
 // const ans = myFunc();
-// ans();    // ans becomes a function since myFUnc is returning a func
-
-
+// ans();    // since myFunc is returning a function and is stored in ans. So ans also becomes a function for obvious reasons
 
 // Important array methods
 
@@ -895,8 +947,8 @@
 //         multiplyBy2(numbers[i],i);
 // }
 
-let i = 0, j = 1;
-function fibbo(i,j){
-        return i + j;
-}
-console.log('fibbo')
+// let i = 0, j = 1;
+// function fibbo(i,j){
+//         return i + j;
+// }
+// console.log('fibbo')

@@ -938,19 +938,34 @@
 
 // Important array methods  forEach, map, filter, reduce
 
-const numbers = [3, 4, 6, 5, 2];
-function multiplyBy2(number, index) {
-  console.log("index is ", index);
-  console.log(`${number}*2 = ${number * 2}`);
-}
-// multiplyBy2(numbers[0], 0); //index is 0, 3*2 = 6
-// but if we want to do it for all the index, we gonna use for loop
-
-// for (let i = 0; i < numbers.length; i++) {
-//   multiplyBy2(numbers[i], i);
+// const numbers = [3, 4, 6, 5, 2];
+// function multiplyBy2(number, index) {
+//   console.log("index is ", index);
+//   console.log(`${number}*2 = ${number * 2}`);
 // }
+// // multiplyBy2(numbers[0], 0); //index is 0, 3*2 = 6
+// // but if we want to do it for all the index, we gonna use for loop
 
-numbers.forEach(multiplyBy2);
+// // for (let i = 0; i < numbers.length; i++) {
+// //   multiplyBy2(numbers[i], i);
+// // }
+
+// // we can use forEach loop also
+// numbers.forEach(multiplyBy2); // same output
+// forEach iterates all the items in the array. And it automatically passes the item as the first parameter and the index as the second parameter
+
+// The whole codes can be also written as
+
+const numbers = [3, 4, 6, 5, 2];
+numbers.forEach(function (number, index) {
+  console.log(`number : ${number} and index: ${index}`);
+});
+
+/********************************************************************* */
+// Important  PARAMETER VS ARGUMENT
+// while defining functions, the elements passing inside the parameter () are called parameter.
+// While calling the function, the elements inside the parameter are called arguments.
+/********************************************************************* */
 
 // let i = 0, j = 1;
 // function fibbo(i,j){

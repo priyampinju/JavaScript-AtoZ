@@ -1242,3 +1242,104 @@
 // console.log(products.some((product) => product.price > 20000)); //true
 // console.log(products.some((product) => product.price > 32000)); //false
 // console.log(products.some((product) => product.price >= 32000)); //true
+
+/*********************************************************************** */
+
+// // fill method
+// // Make an array with ten -1s.
+// const myArray = new Array(10).fill(-1);
+// console.log(myArray); // [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+
+// another use: lets say we have an array
+// const array = [1, 2, 3, 4, 5, 6, 7, 8];
+// // and we want to change 3,4,5 to 0,0,0
+// console.log(array.fill(0, 3, 6)); // fill(value, start index, end index)
+// // output: [1, 2, 3, 0, 0, 0, 7, 8]
+
+/*********************************************************************** */
+
+// // splice method
+// // used for deleting any item and inserting in that place
+// // splice(start, deleteCount, insert):)
+
+// const myArray1 = ["cat", "billi", "dog", "kutta"];
+// console.log(myArray1.splice(1, 1)); //['billi']
+// console.log(myArray1); // ['cat', 'dog', 'kutta']
+
+// console.log(myArray1); //['cat', 'billi', 'dog', 'kutta']
+// myArray1.splice(1, 1, "hi");
+// console.log(myArray1); //['cat', 'hi', 'dog', 'kutta']
+
+// if we want to insert something in the array at 3rd place
+
+// const deletedItem = myArray1.splice(2, 0, "new item"); // this also returns the deleted item
+// console.log(myArray1); // ['cat', 'billi', 'new item', 'dog', 'kutta']
+
+// console.log(deletedItem); //[] ccause no item was deleted
+
+/************************************************************************ */
+
+// // Iterables
+// // Those datatypes which can be used in for of loop, which can be iterated.
+// // eg. strings, arrays
+
+// const name = "BagmitaDevi";
+// // can we use for of loop
+// for (char of name) console.log(char); // bagmmitadevi
+// // since it can be iterated, it is iterable. String is iterable
+
+// Objects
+// const user = { id: 1, name: "Bagmita", age: 22 };
+// // can we iterate? Let's see
+// for (item of user) console.log(item.name); // gives nothing
+// // That means objects are not iterables
+
+/************************************************************************* */
+
+// // Array like objects
+// // Those datatypes that has length property and which can be accessed through index. eg. string
+// const name = "BagmitaDevi";
+// console.log(name.length); //11
+// console.log(name[3]); //m
+
+/************************************************************************ */
+
+// Sets : They are iterable, They also store data, But we cant access it through index. Sets have their own methods. The orders of the items are not guaranteed. Only unique items are accepted in sets
+
+// const numbers = new Set([1, 2, 3, 4, 5]);
+// console.log(numbers); // {1,2,3,4,5}
+
+// // now let see what happens when we put duplicate items
+// const numbers1 = new Set([1, 2, 3, 4, 5, 6, 7, 3]);
+// console.log(numbers1); // {1, 2, 3, 4, 5, 6, 7} The duplicate item is not stored
+
+// Now lets try to access it through index
+// const numbers = new Set([1, 2, 3, 4, 5, 3, 5, 2, 3]);
+// console.log(numbers); // {1, 2, 3, 4, 5}
+// console.log(numbers[3]); // undefined So we cant access it through index
+
+// const numbers = new Set([1, 2, 3, 4, 5, 3, 5, 2, 3]);
+// // now we can add items here
+// numbers.add(11);
+// console.log(numbers); // {1, 2, 3, 4, 5, 11}
+// const array = ["pig", "cat"];
+// // numbers.add(array);
+// numbers.add(...array);
+// console.log(numbers);
+// // we can checkk if a particular item is available
+// console.log(numbers.has(4)); // true
+// numbers.has(1) ? console.log("yes") : console.log("no"); // yes
+
+// // Now lets see if it is iterable
+// for (number of numbers) console.log(number);  // it iterates
+
+// // Real examples
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 4, 3, 6, 2, 5, 4];
+const uniqueArray = new Set(array);
+console.log(uniqueArray); // unique items prints
+console.log(array); // the original array is not changed
+
+// // To find the length, we can do
+let legth = 0;
+for (item of uniqueArray) length++;
+console.log(length); // 8

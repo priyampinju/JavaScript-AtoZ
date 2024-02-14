@@ -1395,23 +1395,59 @@
 // console.log(userInfo.get(person1).gender); //male
 // // so we have to use get method to get info
 
-const person1 = {
-  id: 1,
-  name: "Khusbu",
-};
-const person2 = {
-  id: 2,
-  name: "Bajaj",
-};
-const extraInfo = new Map();
-extraInfo.set(person1, { age: 20, gender: "female" });
-extraInfo.set(person2, { age: 21, gender: "female" });
+// const person1 = {
+//   id: 1,
+//   name: "Khusbu",
+// };
+// const person2 = {
+//   id: 2,
+//   name: "Bajaj",
+// };
+// const extraInfo = new Map();
+// extraInfo.set(person1, { age: 20, gender: "female" });
+// extraInfo.set(person2, { age: 21, gender: "female" });
 
-console.log(extraInfo.get(person1).age);
-console.log(extraInfo.get(person2).age);
+// console.log(extraInfo.get(person1).age);        // 20
+// console.log(extraInfo.get(person2).age);        // 21
 
 /********************************************************************** */
+
+// // Clone using object.assign
+
+// const girl = {
+//   name: "Bagmita",
+//   age: 22,
+// };
+
+// const girl1 = girl;
+// console.log(girl, girl1); // Both are same
+
+// If we try putting new key value pair
+// girl1.sname = "devi";
+// console.log(girl, girl1); // Both are same
+
+// Here the object is saved in heap memory and both girl and girl1 has the address to it So upon changing anything in one, the other is getting changed
+
+// So here we can use spread operator
+// const girl3 = { ...girl };
+// // instead we also can assign values to the object.
+// const girl3 = Object.assign({}, girl); // {key value pair that we want to add}
+// console.log(girl3);
+// girl.sname = "devi";
+
+// console.log(girl); // {name: 'Bagmita', age: 22, sname: 'devi'}
+// console.log(girl3); // {name: 'Bagmita', age: 22}
+
 /********************************************************************** */
+
+// // optional chaining
+// Lets say we have an object
+const person = {
+  id: 3,
+  name: "Rita",
+};
+console.log(person.address);
+
 /********************************************************************** */
 /********************************************************************** */
 /********************************************************************** */

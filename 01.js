@@ -1334,12 +1334,119 @@
 // for (number of numbers) console.log(number);  // it iterates
 
 // // Real examples
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 4, 3, 6, 2, 5, 4];
-const uniqueArray = new Set(array);
-console.log(uniqueArray); // unique items prints
-console.log(array); // the original array is not changed
+// const array = [1, 2, 3, 4, 5, 6, 7, 8, 4, 3, 6, 2, 5, 4];
+// const uniqueArray = new Set(array);
+// console.log(uniqueArray); // unique items prints
+// console.log(array); // the original array is not changed
 
 // // To find the length, we can do
-let legth = 0;
-for (item of uniqueArray) length++;
-console.log(length); // 8
+// let legth = 0;
+// for (item of uniqueArray) length++;
+// console.log(length); // 8
+
+/********************************************************************** */
+
+// // Maps
+// // Maps are iterables. They store data in order. They store key value pair and they are like objects. Duplicate keys are not allowed unlike objects.
+
+// // Difference between Maps and Objects
+// // Objects can have only string or symbol as keys but Maps can store anything like arrays, number, string
+
+// const person = new Map();
+// console.log(person); // Map(0)
+// person.set("name", "Khusbu");
+// console.log(person); // Map(1) {'name' => 'Khusbu'}
+
+// // as we know it accepts any type of key
+// person.set([1, 2, 3, 4], "Hehe");
+// console.log(person); // Map(2) {'name' => 'Khusbu', Array(4) => 'Hehe'}
+
+// // Now lets check for the indexing
+// console.log(person[1]); // undefined   Then how to index
+// console.log(person["name"]); // undefined Then?
+// // we use get method to access
+// console.log(person.get("name")); // khusbu
+
+// console.log(person.keys()); // MapIterator {'name', Array(4)} // We can print the keys using loop
+
+// for (key of person.keys()) console.log(key, typeof key); // (4) [1, 2, 3, 4] 'object'
+// It is returning arrays. So we can apply array methods.
+
+// for (key of person) console.log(Array.isArray(key)); // true
+
+// // Now lets destructure is
+
+// for ([key, value] of person) console.log(`${key} : ${value}`);  // showing
+
+// // Real example
+
+// const person1 = {
+//   id: 1,
+//   name: "Khusbu",
+// };
+// An object is given. We want to store more information in it. But somewhere else and not in person1.
+
+// const userInfo = new Map();
+// userInfo.set(person1, { age: 12, gender: "female" });
+
+// console.log(userInfo); // map
+// console.log(person1.id); // 1
+// console.log(person1.age); //undefined
+// console.log(userInfo.get(person1).gender); //male
+// // so we have to use get method to get info
+
+const person1 = {
+  id: 1,
+  name: "Khusbu",
+};
+const person2 = {
+  id: 2,
+  name: "Bajaj",
+};
+const extraInfo = new Map();
+extraInfo.set(person1, { age: 20, gender: "female" });
+extraInfo.set(person2, { age: 21, gender: "female" });
+
+console.log(extraInfo.get(person1).age);
+console.log(extraInfo.get(person2).age);
+
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */
+/********************************************************************** */

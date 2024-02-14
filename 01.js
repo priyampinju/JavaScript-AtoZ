@@ -1,3 +1,9 @@
+/*********************************************************************** */
+// Hi, welcome to my github, I am Pinju Priyam Gogoi, this is my javascript journey. I actually forgot the day I started learning javascript. Maybe it was around april 2022. But then I went to university and forgot about javascript. Then after my masters, when reality hit me I realised I have learned nothing and I dont have the skills to be employable. So I again started learing javascript. Its feb 10, 2024. I am resuming my javascript journey. And I had no intention of pushing this file to github. So the first part of this file is not well documented. But now that I'm learning it seriously, I am documenting it as much as possible. This will help me in the future if there needs anything that I forgot. This is a note to the future me that there was this day when this jobless boy was focused in just learning and nothing else.
+/*********************************************************************** */
+// Learning everything from https://youtu.be/chx9Rs41W6g?si=PlZ96KmRzVbQ-wL3
+/*********************************************************************** */
+
 // "use strict";
 
 // console.log("Hello World");
@@ -235,6 +241,8 @@
 //         console.log("Your guess is wrong");
 // }
 
+/********************************************************************** */
+
 // //switch statement
 // //problem: We have to print the name of the day
 
@@ -266,6 +274,8 @@
 //                 console.log("Invalid Day");
 //                 break;
 // }
+
+/********************************************************************* */
 
 // //While loop
 
@@ -304,6 +314,8 @@
 //         sum = sum + i;
 // }
 // console.log(sum);
+
+/*********************************************************************** */
 
 //break keyword and continue keyword
 // for(i=0;i<=10; i++){
@@ -1056,3 +1068,177 @@
 // console.log(evenNumbers);
 
 /******************************************************************** */
+
+// // reduce method
+// const numbers = [1, 2, 3, 4, 5, 6]; // aim is to sum all the numbers
+
+// const sum = numbers.reduce((accumulator, currentValue) => {
+//   // these are the two parameters that reduce takes
+//   return accumulator + currentValue;
+// });
+// console.log(sum); // 21
+
+// Now how it happening? for the first iteration, accumulator = 1 (1st index), currentValue = 2 (2nd index), return = 3 (accumulator + currentValue). Now for the second iteration, the accumulator will store the previous return. that is 3, currentValue = 3, return = 6, and so on...
+
+// Now some real example
+// to find the total price of all the items in the cart
+
+// const userCart = [
+//   { productId: 1, productName: "phone", price: 12000 },
+//   { productId: 2, productName: "washing machine", price: 18000 },
+//   { productId: 3, productName: "fridge", price: 14000 },
+// ];
+
+// // But we are facing a problem here. We were working with arrays before. But here we are encountering an array of objects. so we cant just let the accumulator (first parameter) be the first object cause if it becomes the first object, then we have to get the price of it using acc.price but as we know from the second iteration, acc stores the return of the previous iteration. So if the acc becomes an object, it won't be able to store the return of the previous iteration.
+// // But there is a solution. We can pass a default value for the accumulator(first parameter). So lets say we are passing 0 as the default parameter of acc. Then it becomes a number. So now it can store numbers. syntax: numbers.reduce((acc, curVal)=> {},0)
+
+// const totalAmount = userCart.reduce((totalPrice, curProd) => {
+//   return totalPrice + curProd.price;
+// }, 0);
+// console.log(`Total price of the cart: ${totalAmount}`);
+
+/********************************************************************* */
+
+// // sort method
+// sort method in javascript mutates the original array. other array methods gives us new arrays. But in case of sort, it modifies the original array
+
+// const numbers = [1, 4, 3, 7, 2, 6, 8, 4];
+// numbers.sort();
+// console.log(numbers); //(8) [1, 2, 3, 4, 4, 6, 7, 8] This means this has changed the numbers permanently
+
+// another example
+// const numbers = [4, 7, 400, 29, 5000, 699];
+// numbers.sort();
+// console.log(numbers); // (6) [29, 4, 400, 5000, 699, 7] But why?
+// This is because javascript  sorts as strings by default. so when we are sorting it, its sorting it like strings. Thats why its been sorted with the first digit.
+
+// javascript use ASCII  value to sort strings they are like:
+// '0' : 48
+// '1' : 49
+// '2' : 50
+// '3' : 51
+// ...... '9' : 57
+
+// to sort numbers in ascending order, we use  following code
+
+// const numbers = [1, 4, 8, 45, 33, 4885, 4665, 344];
+// // numbers.sort((a, b) => {
+// //   return a - b;
+// // });
+// // or
+// numbers.sort((a, b) => a - b);
+// console.log(numbers);
+// Now how is it working: first it will take 2 parameters a and b, a will be 1st index and b will be 2nd index. So, then, it will do a - b. lets say a is 1 and b is 4. So after a-b, its negative. then it does pushes a to the array. and so on
+
+// // This is the way to sort in ascending order. If we have to sort in descending order then,
+// const numbers = [1, 4, 8, 45, 33, 4885, 4665, 344];
+// numbers.sort((a, b) => b - a);
+// console.log(numbers);
+
+// // realistic example: Sorting price: high to low -->
+// const products = [
+//   { productId: 1, name: "flowers", price: 120 },
+//   { productId: 2, name: "flowers1", price: 20 },
+//   { productId: 3, name: "flowers2", price: 200 },
+//   { productId: 4, name: "flowers3", price: 630 },
+//   { productId: 5, name: "flowers4", price: 1100 },
+//   { productId: 6, name: "flowers5", price: 50 },
+// ];
+// products.sort((a, b) => {
+//   return b.price - a.price;
+// });
+// console.log(products); //{productId: 5, name: 'flowers4', price: 1100}{productId: 4, name: 'flowers3', price: 630} {productId: 3, name: 'flowers2', price: 200}{productId: 1, name: 'flowers', price: 120}{productId: 6, name: 'flowers5', price: 50}{productId: 2, name: 'flowers1', price: 20}
+
+// // But there is a problem. As we have seen that sort method mutates the array and we dont want that. So we will applyy sort method on a cloned array.
+// const products = [
+//   { productId: 1, name: "flowers", price: 120 },
+//   { productId: 2, name: "flowers1", price: 20 },
+//   { productId: 3, name: "flowers2", price: 200 },
+//   { productId: 4, name: "flowers3", price: 630 },
+//   { productId: 5, name: "flowers4", price: 1100 },
+//   { productId: 6, name: "flowers5", price: 50 },
+// ];
+// // low to high
+// const lowToHigh = products.slice(0).sort((a, b) => {
+//   return a.price - b.price;
+// });
+// console.log(lowToHigh);
+// console.log(products);
+
+/********************************************************************* */
+
+// // find method
+// // it also takes callback as argument
+
+// const myArray = ["cat", "dog", "deer", "tiger"];
+
+// const isLength = (str) => {
+//   return str.length == 3;
+// };
+
+// console.log(myArray.find(isLength));  // 'cat' -> find method finds the first element with length 3. It will look for the str with length3 and when it encounters one it will return it.
+
+// const myArray = ["human", "cat", "dog", "billi", "mango"];
+// console.log(myArray.find((str) => str.length === 3)); // 'cat'
+
+// // Real Example
+// const users = [
+//   { userId: 1, name: "Pin", age: 25 },
+//   { userId: 2, name: "P", age: 26 },
+//   { userId: 3, name: "Pi", age: 27 },
+//   { userId: 4, name: "Pinj", age: 28 },
+//   { userId: 5, name: "Pinju", age: 29 },
+// ];
+
+// console.log(users.find((user) => user.name.length === 4));
+
+/*********************************************************************** */
+
+// // Every method
+// // We need to check if every element in the array are even
+
+// const numbers = [2, 18, 4, 6, 12, 10, 8];
+
+// // the callback of every should return boolean
+// // and the every method also returns boolean.
+
+// console.log(numbers.every((number) => number % 2 == 0)); // true since all elements are even
+
+// const numbers = [2, 3, 4, 5, 6, 7];
+// console.log(numbers.every((number) => number % 2 == 0)); // false since not all are even
+
+// // Real example
+
+// const products = [
+//   { productId: 1, name: "phone", price: 20000 },
+//   { productId: 2, name: "microwave", price: 12000 },
+//   { productId: 3, name: "dishwasher", price: 15000 },
+//   { productId: 4, name: "charger", price: 2000 },
+//   { productId: 5, name: "tv", price: 32000 },
+// ];
+// // to find if all the items are below 20000
+
+// console.log(products.every((product) => product.price <= 20000)); // false
+
+/************************************************************** */
+
+// // some method
+// // it checks if even one item is there that satisfies the condition
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+// console.log(numbers.some((number) => number % 2 == 0)); // returns true cause there are even numbers in the array
+
+// // real example
+
+// const products = [
+//   { productId: 1, name: "phone", price: 20000 },
+//   { productId: 2, name: "microwave", price: 12000 },
+//   { productId: 3, name: "dishwasher", price: 15000 },
+//   { productId: 4, name: "charger", price: 2000 },
+//   { productId: 5, name: "tv", price: 32000 },
+// ];
+// // check if there is any product with price tag more than 20000
+
+// console.log(products.some((product) => product.price > 20000)); //true
+// console.log(products.some((product) => product.price > 32000)); //false
+// console.log(products.some((product) => product.price >= 32000)); //true

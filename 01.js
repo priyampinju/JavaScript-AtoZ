@@ -1441,14 +1441,78 @@
 /********************************************************************** */
 
 // // optional chaining
-// Lets say we have an object
-const person = {
-  id: 3,
-  name: "Rita",
-};
-console.log(person.address);
+// // Lets say we have an object
+// const person = {
+//   id: 3,
+//   name: "Rita",
+// };
+// console.log(person.address); //undefined
+
+// // Sometimes we might encounter such problem when we want to work with something that is not yet defined. But this way we have to face problem.
+// // In react we work this way that something will be defined later but we dont want it to throw error
+
+// // We first check if that property exists, if not the code is not executed
+// console.log(person?.name);
+// console.log(person?.address);
 
 /********************************************************************** */
+
+// // methods
+// // functions inside object
+
+// const person = {
+//   name: "Bagmita",
+//   age: 21,
+//   about: function () {
+//     // console.log(`Person name is ${person.name} and age is ${person.age}`);
+//     // We can also write ${this.name} and ${this.age}
+//     // This key word refers to the object we are inside or we are working with
+//     // console.log(`This person's name is ${this.name} and age is ${this.age}`);
+//     // We can just print this and see what it returns
+//     console.log(this); // {name: 'Bagmita', age: 21, about: ƒ}
+//     // So 'this' keyword sees who calls it. Here, the about fuction was called by person. So 'this' keyword works as person object
+//   },
+// };
+
+// person.about();
+
+// // Real example
+function personInfo() {
+  console.log(`The name of this user is ${this.name} and age is ${this.age}`);
+}
+
+const person1 = {
+  name: "Bagmita",
+  age: 21,
+  about: personInfo,
+};
+
+const person2 = {
+  name: "Khusbu",
+  age: 21,
+  about: personInfo,
+};
+
+const person3 = {
+  name: "Khusboo",
+  age: 21,
+  about: personInfo,
+};
+
+const person4 = {
+  name: "Rita",
+  age: 21,
+  about: personInfo,
+};
+
+const person5 = {
+  name: "Ananya",
+  age: 21,
+  about: personInfo,
+};
+
+person3.about();
+
 /********************************************************************** */
 /********************************************************************** */
 /********************************************************************** */

@@ -1477,48 +1477,314 @@
 // person.about();
 
 // // Real example
-function personInfo() {
-  console.log(`The name of this user is ${this.name} and age is ${this.age}`);
+// function personInfo() {
+//   console.log(`The name of this user is ${this.name} and age is ${this.age}`);
+// }
+
+// const person1 = {
+//   name: "Bagmita",
+//   age: 21,
+//   about: personInfo,
+// };
+
+// const person2 = {
+//   name: "Khusbu",
+//   age: 21,
+//   about: personInfo,
+// };
+
+// const person3 = {
+//   name: "Khusboo",
+//   age: 21,
+//   about: personInfo,
+// };
+
+// const person4 = {
+//   name: "Rita",
+//   age: 21,
+//   about: personInfo,
+// };
+
+// const person5 = {
+//   name: "Ananya",
+//   age: 21,
+//   about: personInfo,
+// };
+
+// person3.about();
+
+/********************************************************************** */
+
+// // What if we just console log this
+// console.log(this);    // returns window object
+
+// function print() {
+//   console.log(this);
+// }
+// const person1 = {
+//   name: "Pinju",
+//   age: 32,
+//   detail: print,
+// };
+
+// person1.detail(); // prints whole object person1
+
+/********************************************************************** */
+
+// // Call method, apply method and bind method
+// function hi() {
+//   console.log("Hello guys");
+// }
+
+// hi(); // Hello guys
+// hi.call(); // Hello guys // so basically call method calls the function
+
+// const user1 = {
+//   name: "Bagmita",
+//   age: 21,
+//   about: function () {
+//     console.log(`This user is ${this.name} and age is ${this.age}`);
+//   },
+// };
+
+// const user2 = {
+//   name: "Devi",
+//   age: 23,
+// };
+
+// user1.about(); // This user is Bagmita and age is 21
+// user2.about(); // This user is Bagmita and age is 21
+// It gives us the same output even when there is no about function in user2
+// To use the same about function in the user2, we have to use call method.
+
+// user1.about.call(user2); // This user is Devi and age is 23 // So first we are calling the user1's about function and passing user2 as argument
+
+// user1.about.call();  // This user is  and age is undefined
+
+// when we use call method we have to pass argument
+// we also can pass parameters in the function. And also can keep the function outside the object
+
+// function about(hobby, favMusician) {
+//   console.log(
+//     `The user is ${this.name} with age being ${this.age} likes ${hobby} as hobby and loves listening to ${favMusician}`
+//   );
+// }
+
+// const user1 = {
+//   name: "Bagmita",
+//   age: 21,
+// };
+
+// const user2 = {
+//   name: "Devi",
+//   age: 23,
+// };
+
+// about.call(user1, "snoring", "Curly hair"); // The user is Bagmita with age being 21 likes snoring as hobby and loves listening to Curly hair
+// // So if we dont declare something inside the object we definitely can pass it as argument
+
+// about.apply(user1, ["snoring", "Curly Hair"]); //The user is Bagmita with age being 21 likes snoring as hobby and loves listening to Curly Hair
+// // For using apply method we have to pass the arguments in an array
+
+// const func = about.bind(user1, "snoring", "curly hair"); // this bind method returns a function and we are storing it in the func variable
+// func(); // The user is Bagmita with age being 21 likes snoring as hobby and loves listening to curly hair
+
+// // Let's discuss why we use bind
+// const user1 = {
+//   name: "Khubsu",
+//   age: 21,
+//   about: function () {
+//     console.log(this.name);
+//   },
+// };
+
+// // user1.about(); // Khusbu
+// // what if we put it in a variable
+// // const func = user1.about(); //Khusbu
+// // func(); // udefined. // So what is happening is the about function is just being saved inside func. And this keyword has nothing to do in func. So to use the user1's data in this keyword, we use the bind method.
+
+// const func = user1.about.bind(user1);
+// func(); // Khusbu
+
+/********************************************************************** */
+
+// // Arrow function behaviours
+// const user1 = {
+//   name: "Khusboo",
+//   age: 22,
+//   about: () => {
+//     console.log(this);
+//   },
+// };
+
+// user1.about(); // window {}
+// // so the this keyword in an arrow function behaves differently then the normal function. Here the this function in the arrow function doesnot point to the user1, it points to one step above. So here its pointing to the window.
+
+/********************************************************************** */
+
+// // we can also write
+// const user1 = {
+//   name: "Khusboo",
+//   age: 22,
+//   about() {
+//     console.log(this.name, this.age);
+//   },
+// };
+// user1.about(); // Khusboo 22
+
+/********************************************************************** */
+
+// // // Object Oriented JS // // //
+
+// const user1 = {
+//   firstName: "Khusboo",
+//   lastName: "Thengal",
+//   age: 22,
+//   email: "khusboo05@gmail.com",
+//   address: "Khumtai MF",
+//   gender: "female",
+//   about() {
+//     console.log(
+//       `This user is ${this.firstName} ${this.lastName} of age ${this.age} years belongs to ${this.address}. You can reach her at ${this.email}`
+//     );
+//   },
+//   is18: function () {
+//     return this.age >= 18;
+//   },
+// };
+// user.about();
+
+// // Now if we want to make hundreds of users we cant do that manually. So we will make a function for that. That function will:- 1.create an object 2.add key value pair 3. return the object
+
+// const userMethods = {
+//   about: function () {
+//     console.log(
+//       `This user is ${this.firstName} ${this.lastName} of age ${this.age} years belongs to ${this.address}. You can reach her at ${this.email}`
+//     );
+//   },
+//   is18: function () {
+//     return this.age >= 18;
+//   },
+// };
+
+// function createUser(firstName, lastName, age, email, address, gender) {
+//   const user = {};
+//   user.firstName = firstName;
+//   user.lastName = lastName;
+//   user.age = age;
+//   user.email = email;
+//   user.address = address;
+//   user.gender = gender;
+//   // user.about = function () {
+//   //   console.log(
+//   //     `This user is ${this.firstName} ${this.lastName} of age ${this.age} years belongs to ${this.address}. You can reach her at ${this.email}`
+//   //   );
+//   // }
+
+//   user.about = userMethods.about;
+//   // user.is18 = function () {
+//   //   return this.age >= 18;
+//   // },
+//   user.is18 = userMethods.is18;
+//   return user;
+// }
+
+// const user1 = createUser(
+//   "Bagmita",
+//   "Devi",
+//   "22",
+//   "bagmita@123.com",
+//   "Jorhat",
+//   "female"
+// );
+// console.log(user1);
+// const is18 = user1.is18();
+// console.log(is18); // true
+
+// const user2 = createUser(
+//   "Khusboo",
+//   "Thengal",
+//   "24",
+//   "khusboo@gmmsl.com",
+//   "Golaghat",
+//   "female"
+// );
+// console.log(user2.firstName); // Khusboo
+
+// // But there is a problem. When we are creating a new user, we are defining the about and is18 methods. so it is taking up so much space. So we will declare the methods separately and call the reference of the methods inside the createUser. that way we will not take more space
+
+/********************************************************************** */
+
+// // Chaining and __proto__ or [[prototype]]
+
+// const obj1 = {
+//   key1: "value1",
+//   key2: "value2",
+// };
+// const obj2 = Object.create(obj1);
+// console.log(obj2); //{} empty object
+// obj2.key3 = "value3";
+// console.log(obj2); // {key3: 'value3'}
+// console.log(obj2.key1); //value1 // But there is no key1 inside obj2. This is because we have passed obj1 as argument in create(). JS first will look for the key1 inside obj2. If not found it will look for it in the argument object
+
+// // // Now the question is how is this happening? So if we print obj2,
+// console.log(obj2); // we can see [[prototype]] : object inside obj2. If we see inside [[prototype]] we can see key1: "value1" key2: "value2" So this prototype refers to the obj1. We can print it
+// console.log(obj2.__proto__); // key1:value1... // [[prototype]] and  __proto are same
+// console.log(obj1.__proto__); // {constructor:f,...}... // IDK what this is
+
+// // // So when we passed obj1 as argument in create(), we are simply keeping the argument inside the __proto__ or [[prototype]]
+// // // This is called Chaining
+
+/********************************************************************** */
+
+// // Lets assume that we want a new method inside one user.
+
+const userMethods = {
+  about: function () {
+    console.log(
+      `This user is ${this.firstName} ${this.lastName} of age ${this.age} years belongs to ${this.address}. You can reach her at ${this.email}`
+    );
+  },
+  is18: function () {
+    return this.age >= 18;
+  },
+};
+
+function createUser(firstName, lastName, age, email, address, gender) {
+  const user = {};
+  user.firstName = firstName;
+  user.lastName = lastName;
+  user.age = age;
+  user.email = email;
+  user.address = address;
+  user.gender = gender;
+  user.about = userMethods.about;
+  user.is18 = userMethods.is18;
+  return user;
 }
 
-const person1 = {
-  name: "Bagmita",
-  age: 21,
-  about: personInfo,
-};
+const user1 = createUser(
+  "Bagmita",
+  "Devi",
+  "22",
+  "bagmita@123.com",
+  "Jorhat",
+  "female"
+);
+console.log(user1);
+const is18 = user1.is18();
+console.log(is18); // true
 
-const person2 = {
-  name: "Khusbu",
-  age: 21,
-  about: personInfo,
-};
+const user2 = createUser(
+  "Khusboo",
+  "Thengal",
+  "24",
+  "khusboo@gmmsl.com",
+  "Golaghat",
+  "female"
+);
+console.log(user2.firstName); // Khusboo
 
-const person3 = {
-  name: "Khusboo",
-  age: 21,
-  about: personInfo,
-};
-
-const person4 = {
-  name: "Rita",
-  age: 21,
-  about: personInfo,
-};
-
-const person5 = {
-  name: "Ananya",
-  age: 21,
-  about: personInfo,
-};
-
-person3.about();
-
-/********************************************************************** */
-/********************************************************************** */
-/********************************************************************** */
-/********************************************************************** */
-/********************************************************************** */
-/********************************************************************** */
 /********************************************************************** */
 /********************************************************************** */
 /********************************************************************** */

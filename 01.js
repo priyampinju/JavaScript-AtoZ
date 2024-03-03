@@ -1739,31 +1739,243 @@
 
 // // Lets assume that we want a new method inside one user.
 
-const userMethods = {
-  about: function () {
-    console.log(
-      `This user is ${this.firstName} ${this.lastName} of age ${this.age} years belongs to ${this.address}. You can reach her at ${this.email}`
-    );
-  },
-  is18: function () {
-    return this.age >= 18;
-  },
-};
+// const userMethods = {
+//   about: function () {
+//     console.log(
+//       `This user is ${this.firstName} ${this.lastName} of age ${this.age} years belongs to ${this.address}. You can reach her at ${this.email}`
+//     );
+//   },
+//   is18: function () {
+//     return this.age >= 18;
+//   },
+// };
 
-function createUser(firstName, lastName, age, email, address, gender) {
-  const user = {};
-  user.firstName = firstName;
-  user.lastName = lastName;
-  user.age = age;
-  user.email = email;
-  user.address = address;
-  user.gender = gender;
-  user.about = userMethods.about;
-  user.is18 = userMethods.is18;
-  return user;
+// function createUser(firstName, lastName, age, email, address, gender) {
+//   // const user = {};
+//   const user = Object.create(userMethods); // What this will do is, whenever we want about and is18, first it will look for the functions inside user, if not found it will look for it in the __proto__ that is userMethods
+//   //  THis line is doing two things. It is giving us an empty object as well as a __proto__
+//   user.firstName = firstName;
+//   user.lastName = lastName;
+//   user.age = age;
+//   user.email = email;
+//   user.address = address;
+//   user.gender = gender;
+//   // user.about = userMethods.about;
+//   // user.is18 = userMethods.is18;
+//   return user;
+// }
+
+// const user1 = createUser(
+//   "Bagmita",
+//   "Devi",
+//   "22",
+//   "bagmita@123.com",
+//   "Jorhat",
+//   "female"
+// );
+// // console.log(user1);
+// // const is18 = user1.is18();
+// // console.log(is18); // true
+
+// const user2 = createUser(
+//   "Khusboo",
+//   "Thengal",
+//   "24",
+//   "khusboo@gmmsl.com",
+//   "Golaghat",
+//   "female"
+// );
+// // console.log(user2.firstName); // Khusboo
+// // // Now as we have put userMethods in the __proto__ lets try to print the user1.about
+// console.log(user1.about()); // printing
+
+/********************************************************************** */
+
+// // Prototype
+
+// // In javascript, function keyword is both a function as well as an object.
+
+// function hello() {
+//   console.log("Hi bitcches");
+// }
+// // Javascript functions ===> function + object
+// // In objects, we can get the name of the object by obj.name. So let's try that with hello()
+// console.log(hello.name); // hello
+
+// // we can add our own property too
+// hello.myOwnProperty = "Yo brother"; // Key value pair
+// console.log(hello.myOwnProperty); // Yo brother
+
+// name property gives us function name
+// function also provide call, apply, bind methods
+
+// function gives us a free object {} and that is prototype
+
+// console.log(hello.prototype); // free space {} for us to use
+// Only functions provide prototype property
+
+// // // As we know prototype is a free object that comes with every function, we can add anything.
+// hello.prototype.key3 = "value3";
+// console.log(hello.prototype); // {key3: 'value3', constructor: ƒ}
+// hello.prototype.sing = function () {
+//   return "happy birthday to you";
+// };
+
+// console.log(hello.prototype); // {key3: 'value3', sing: ƒ, constructor: ƒ}
+
+// console.log(hello.prototype.sing());
+
+/********************************************************************** */
+
+// As we know that there is no connection between __proto__ and prototype. But we can create our own connection
+
+// const userMethods = {
+//   about: function () {
+//     console.log(
+//       `This user is ${this.firstName} ${this.lastName} of age ${this.age} years belongs to ${this.address}. You can reach her at ${this.email}`
+//     );
+//   },
+//   is18: function () {
+//     return this.age >= 18;
+//   },
+// };
+
+// function createUser(firstName, lastName, age, email, address, gender) {
+//   const user = Object.create(createUser.prototype);
+//   user.firstName = firstName;
+//   user.lastName = lastName;
+//   user.age = age;
+//   user.email = email;
+//   user.address = address;
+//   user.gender = gender;
+//   return user;
+// }
+
+// // // If every function provide us an empty object then createUser also will provide prototype
+// // console.log(createUser.prototype); // {}
+// // // If that's the case, instead of creating a new object userMethods, we can work with createUser.prototype
+
+// createUser.prototype.about = function () {
+//   return `This user is ${this.firstName} ${this.lastName} of age ${this.age} years belongs to ${this.address}. You can reach her at ${this.email}`;
+// };
+
+// createUser.prototype.is18 = function () {
+//   return this.age >= 18;
+// };
+
+// const user1 = createUser(
+//   "Bagmita",
+//   "Devi",
+//   "22",
+//   "bagmita@123.com",
+//   "Jorhat",
+//   "female"
+// );
+// const user2 = createUser(
+//   "Khusboo",
+//   "Thengal",
+//   "24",
+//   "khusboo@gmmsl.com",
+//   "Golaghat",
+//   "female"
+// );
+// console.log(user1.about()); // prints
+
+/********************************************************************** */
+
+// // New Keyword
+
+// function createUser(firstName, age) {
+//   this.firstName = firstName;
+//   this.age = age;
+// }
+
+// createUser.prototype.about = function () {
+//   console.log(this.firstName, this.age);
+// };
+
+// const user1 = new createUser("pinju", 12);
+
+// // // this new keyword is doing 3 things. creating an empty object, return the empty object this.
+
+// console.log(user1);
+
+// // We gonna copy the previous code
+
+// // // this is known as constructor function. This type of functions that needs to be use new keyword has its function name starting with capital letter
+// function CreateUser(firstName, lastName, age, email, address, gender) {
+//   // const user = Object.create(createUser.prototype); // instead of this line we will use new while defining
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+//   this.age = age;
+//   this.email = email;
+//   this.address = address;
+//   this.gender = gender;
+//   // return user; // we dont need this cause new retturns itself
+// }
+
+// CreateUser.prototype.about = function () {
+//   return `This user is ${this.firstName} ${this.lastName} of age ${this.age} years belongs to ${this.address}. You can reach her at ${this.email}`;
+// };
+
+// CreateUser.prototype.is18 = function () {
+//   return this.age >= 18;
+// };
+
+// const user1 = new CreateUser(
+//   "Bagmita",
+//   "Devi",
+//   "22",
+//   "bagmita@123.com",
+//   "Jorhat",
+//   "female"
+// );
+// const user2 = new CreateUser(
+//   "Khusboo",
+//   "Thengal",
+//   "24",
+//   "khusboo@gmmsl.com",
+//   "Golaghat",
+//   "female"
+// );
+// console.log(user1.about()); // prints
+// console.log(user2.about()); // prints
+
+// for (key in user1) {
+//   console.log(key);
+// } // all the keys inside user1 and in the prototype
+
+/********************************************************************** */
+
+// let numbers = [1, 2, 3];
+// console.log(numbers);
+// console.log(numbers.__proto__); // returns a list of methods. But we know that only functions has __proto__.
+// This is because in js, when we declare an array, it behaves like this
+// let numbers = new array(1,2,3) // and we know that new keyword returns a prototype
+
+/********************************************************************** */
+
+// Writing constructors and then creating new users with new keyyyword is very tidious. So we will use class keyword. Classes in javascript are fake unlike other programing languages
+
+class CreateUser {
+  constructor(firstName, lastName, age, email, address, gender) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.email = email;
+    this.address = address;
+    this.gender = gender;
+  }
+
+  about() {
+    return `This user is ${this.firstName} ${this.lastName} of age ${this.age} years belongs to ${this.address}. You can reach her at ${this.email}`;
+  }
+  is18() {
+    return this.age >= 18;
+  }
 }
 
-const user1 = createUser(
+const user1 = new CreateUser(
   "Bagmita",
   "Devi",
   "22",
@@ -1771,25 +1983,11 @@ const user1 = createUser(
   "Jorhat",
   "female"
 );
-console.log(user1);
-const is18 = user1.is18();
-console.log(is18); // true
+// console.log(user1.about());
 
-const user2 = createUser(
-  "Khusboo",
-  "Thengal",
-  "24",
-  "khusboo@gmmsl.com",
-  "Golaghat",
-  "female"
-);
-console.log(user2.firstName); // Khusboo
+// // we can check what's inside prototype of user1
+console.log(Object.getPrototypeOf(user1));
 
-/********************************************************************** */
-/********************************************************************** */
-/********************************************************************** */
-/********************************************************************** */
-/********************************************************************** */
 /********************************************************************** */
 /********************************************************************** */
 /********************************************************************** */

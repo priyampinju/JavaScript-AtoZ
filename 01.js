@@ -1957,41 +1957,211 @@
 
 // Writing constructors and then creating new users with new keyyyword is very tidious. So we will use class keyword. Classes in javascript are fake unlike other programing languages
 
-class CreateUser {
-  constructor(firstName, lastName, age, email, address, gender) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-    this.email = email;
-    this.address = address;
-    this.gender = gender;
-  }
+// class CreateUser {
+//   constructor(firstName, lastName, age, email, address, gender) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.age = age;
+//     this.email = email;
+//     this.address = address;
+//     this.gender = gender;
+//   }
 
-  about() {
-    return `This user is ${this.firstName} ${this.lastName} of age ${this.age} years belongs to ${this.address}. You can reach her at ${this.email}`;
-  }
-  is18() {
-    return this.age >= 18;
-  }
-}
+//   about() {
+//     return `This user is ${this.firstName} ${this.lastName} of age ${this.age} years belongs to ${this.address}. You can reach her at ${this.email}`;
+//   }
+//   is18() {
+//     return this.age >= 18;
+//   }
+// }
 
-const user1 = new CreateUser(
-  "Bagmita",
-  "Devi",
-  "22",
-  "bagmita@123.com",
-  "Jorhat",
-  "female"
-);
-// console.log(user1.about());
+// const user1 = new CreateUser(
+//   "Bagmita",
+//   "Devi",
+//   "22",
+//   "bagmita@123.com",
+//   "Jorhat",
+//   "female"
+// );
+// // console.log(user1.about());
 
-// // we can check what's inside prototype of user1
-console.log(Object.getPrototypeOf(user1));
+// // // we can check what's inside prototype of user1
+// console.log(Object.getPrototypeOf(user1)); // about and is18 is present
 
 /********************************************************************** */
+
+// // // // Inheritance // // //
+
+// // // Animal class
+
+// class Animal {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   eat() {
+//     return `this ${this.name} is eating grass`;
+//   }
+//   isSuperCute() {
+//     return this.age <= 1;
+//   }
+// }
+
+// const animal1 = new Animal("tiger", 3);
+
+// console.log(animal1);
+// console.log(animal1.eat());
+
+// // now if we make another class called dog class
+
+// class Dog {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   eat() {
+//     return `this ${this.name} is eating grass`;
+//   }
+//   isSuperCute() {
+//     return this.age <= 1;
+//   }
+// }
+// const dog1 = new Dog("tommy", 2);
+// console.log(dog1);
+
+// // // // Now as we have seen that we are writing the same thing for all the classes. But we can inherit the properties of any class.
+
+// // class Cat extends Animal {}
+// // const cat1 = new Cat("meow", 1);
+// // console.log(cat1);
+
+// // Objects are also called as instances. So objects and instances are same thing
+// // // now if we have to add something extra in the new class that cant be inherited from the parent class, Now how can we do it lets see
+
+// class Cat extends Animal {
+//   constructor(name, age, speed) {
+//     // now for the name and age we will inherit it from parent class.
+//     super(name, age); // super means the parent class
+//     this.speed = speed;
+//   }
+
+//   run() {
+//     return `${this.name} is running at a speed of ${this.speed} km/h`;
+//   }
+// }
+
+// const cat1 = new Cat("meow", 1, 34);
+// console.log(cat1);
+// console.log(cat1.run()); // meow is running at a speed of 34 km/h
+
 /********************************************************************** */
+
+/// // Same method in base class
+
+// class Animal {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   eat() {
+//     return `this ${this.name} is eating grass`;
+//   }
+//   isSuperCute() {
+//     return this.age <= 1;
+//   }
+// }
+
+// class Cat extends Animal {
+//   constructor(name, age, speed) {
+//     super(name, age);
+//     this.speed = speed;
+//   }
+
+//   eat() {
+//     return `this cat named ${this.name} is eating shit`;
+//   }
+
+//   run() {
+//     return `${this.name} is running at a speed of ${this.speed} km/h`;
+//   }
+// }
+
+// const cat1 = new Cat("meow", 1, 34);
+// console.log(cat1.run()); // meow is running at a speed of 34 km/h
+// console.log(cat1.eat()); // this cat named meow is eating shit
+// // so this means that js will first look for the methods inside the constructor. If not found it will look for in the parent
+
 /********************************************************************** */
+
+////Getters and setters
+
+// class Person {
+//   constructor(firstName, lastName, age) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.age = age;
+//   }
+//   // fullName() {
+
+//   get fullName() {
+//     return `${this.firstName} ${this.lastName}`;
+//   }
+
+//   setName(firstName, lastName) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//   }
+
+//   set fullName(fullName) {
+//     const [firstName, lastName] = fullName.split(" ");
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//   }
+// }
+
+// const person1 = new Person("Khusbu", "Bajaj", 22);
+
+// // console.log(person1.fullName());
+
+// // // As we can see that we can print a property like firstName as person1.firstName but we have to use paranthesis in case of a method. But lets see how we can call any method like property
+
+// // We can add get just before any method and it will act as property of the constructor.
+
+// console.log(person1.fullName); // Khusbu Bajaj
+
+// // // Now how can we set the user's first name and last name from the full name. lets see
+// // Also we can change the first and last name using set
+
+// // console.log(person1.firstName); // Khusbu
+// // console.log(person1.lastName); // Bajaj
+// // person1.setName("Bajaj", "Khusbu");
+// // console.log(person1.firstName); // Bajaj
+// // console.log(person1.lastName); // Khusbu
+
+// person1.fullName = "Pinju Gogoi";
+// console.log(person1); // firstname: Pinju,,,,....
+
 /********************************************************************** */
+
+// static
+
+// class Animal {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   static classInfo() {
+//     return `this is Animal class info`;
+//   }
+// }
+
+// const animal1 = new Animal("tiger", 4);
+// console.log(animal1.classInfo); // returns undefined
+
+// // this is because static properties are not functions to be called.
+
+// console.log(Animal.classInfo()); // This is Animal class info
+
 /********************************************************************** */
 /********************************************************************** */
 /********************************************************************** */
